@@ -3,7 +3,7 @@
   ~ This software is released under MIT license.
   ~ The full license information can be found in LICENSE in the root directory of this project.
   -->
-<p>This is a Clarity seed application. This is the default page that loads for the application.</p>
+
 
 <div class="row">
     <div class="col-lg-5 col-md-8 col-sm-12 col-xs-12" *ngFor = "let item of usersList">
@@ -29,7 +29,7 @@
                 </div>
             </div>
             <div class="card-footer text-xs-right">
-                <button class="btn btn-sm btn-success" click= "goToTodos(item.id)">View Todos</button>
+                <button class="btn btn-sm btn-success" (click)= "goToTodos(item.id)">View Todos</button>
             </div>
         </div>
     </div>
