@@ -6,14 +6,15 @@ import { HttpModule } from '@angular/http';
 import { ClarityModule } from 'clarity-angular';
 import { AppComponent } from './app.component';
 import { ROUTING } from "./app.routing";
-import { HomeComponent } from "./home/home.component";
-import { AboutComponent } from "./about/about.component";
+import { UserComponent } from "./users/users.component";
+import { ToDoComponent } from "./todos/todos.component";
+import { ContentService } from '../providers/contentService';
 
 @NgModule({
     declarations: [
         AppComponent,
-        AboutComponent,
-        HomeComponent
+        ToDoComponent,
+        UserComponent
     ],
     imports: [
         BrowserAnimationsModule,
@@ -23,7 +24,7 @@ import { AboutComponent } from "./about/about.component";
         ClarityModule,
         ROUTING
     ],
-    providers: [],
+    providers: [ContentService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

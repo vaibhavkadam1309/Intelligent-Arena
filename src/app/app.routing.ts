@@ -6,14 +6,15 @@
 import { ModuleWithProviders } from '@angular/core/src/metadata/ng_module';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AboutComponent } from './about/about.component';
-import { HomeComponent } from './home/home.component';
+import { ToDoComponent } from './todos/todos.component';
+import { UserComponent } from './users/users.component';
 
 
 export const ROUTES: Routes = [
-    {path: '', redirectTo: 'home', pathMatch: 'full'},
-    {path: 'home', component: HomeComponent},
-    {path: 'about', component: AboutComponent}
+    { path: '', redirectTo: 'users', pathMatch: 'full' },
+    { path: 'users', component: UserComponent },
+    //  {path: 'about', component: AboutComponent},
+    { path: 'todolist/:userId', component: ToDoComponent },
 ];
 
 export const ROUTING: ModuleWithProviders = RouterModule.forRoot(ROUTES);

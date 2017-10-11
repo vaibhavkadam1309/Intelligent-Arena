@@ -1,0 +1,36 @@
+<!--
+  ~ Copyright (c) 2016 VMware, Inc. All Rights Reserved.
+  ~ This software is released under MIT license.
+  ~ The full license information can be found in LICENSE in the root directory of this project.
+  -->
+<p>This is a Clarity seed application. This is the default page that loads for the application.</p>
+
+<div class="row">
+    <div class="col-lg-5 col-md-8 col-sm-12 col-xs-12" *ngFor = "let item of usersList">
+        <div class="card">
+            <div class="card-header">
+                <div>
+                    <clr-icon shape="user" class="mr-1"></clr-icon>{{item.name}}</div>
+                <small class="text-muted"><clr-icon shape="envelope" class="mr-1"></clr-icon><span>{{item.email}}</span></small>
+            </div>
+            <div class="card-block">
+                <div class="row">
+                    <small class="col-sm-6"><clr-icon shape="phone-handset" class="mr-1"></clr-icon>{{item.phone}}</small>
+                    <small class="col-sm-6"><clr-icon shape="building" class="mr-1"></clr-icon>{{item.company.name}}</small>
+                </div>
+                <div class="row">
+                    <small class="col-sm-6"><clr-icon shape="map-marker" class="mr-1"></clr-icon>{{item.address.street}} {{item.address.city}}</small>
+                    <small class="col-sm-6"><clr-icon shape="map-marker" class="mr-1"></clr-icon>{{item.address.zipcode}}</small>
+                </div>
+                <div class="row">
+                    <small class="col-sm-12">
+                            <clr-icon shape="network-globe" class="mr-1"></clr-icon>{{item.website}}
+                        </small>
+                </div>
+            </div>
+            <div class="card-footer text-xs-right">
+                <button class="btn btn-sm btn-success" click= "goToTodos(item.id)">View Todos</button>
+            </div>
+        </div>
+    </div>
+</div>

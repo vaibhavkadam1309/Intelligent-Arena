@@ -1,0 +1,36 @@
+<!--
+  ~ Copyright (c) 2016 VMware, Inc. All Rights Reserved.
+  ~ This software is released under MIT license.
+  ~ The full license information can be found in LICENSE in the root directory of this project.
+  -->
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 push-lg-3">
+      <div class="card">
+        <div class="card-header" style="box-shadow: 0px 5px 5px #eee;">
+          <h4 class="card-title">
+            <clr-icon shape="list" class="mr-1"></clr-icon>ToDo List</h4>
+        </div>
+        <div class="card-block" style="max-height:400px;overflow-y:scroll;">
+          <div class="row" *ngFor="let item of toDoList">
+            <div class="col-sm-11">
+              <label class="col-sm-10" *ngIf = "!item.completed">
+                    <input type="checkbox" class="mr-1" [checked]="item.completed" (change)="item.completed = !item.completed;updateStatus(item)" />{{item.title}}
+              </label>
+              <label class="col-sm-10" *ngIf = "item.completed" style="text-decoration: line-through;">
+                    <input type="checkbox" class="mr-1" [checked]="item.completed" (change)="item.completed = !item.completed;updateStatus(item)" />{{item.title}}
+              </label>
+            </div>
+            <div class="col-sm-1">
+              <button class="btn btn-sm btn-link" (click)="deleteTodo(item,$index)" title="Remove"><clr-icon shape="times"></clr-icon></button>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer text-xs-right">
+          <input type="text" [(ngModel)]="addTodo" placeholder="Enter new To-Do">
+          <button class="btn btn-sm btn-success" (click)="addNewTodo(addTodo)">Add New Todo</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
